@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Lagrange.Proto.Formatter</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Lilyltt</Authors>
+        <Description>Lagrange Proto Formatter with Source Generator</Description>
+
+        <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+
+        <PackageProjectUrl>https://github.com/LagrangeDev/Lagrange.Proto.Formatter</PackageProjectUrl>
+
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Lagrange.Proto" Version="1.0.8" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\Lagrange.Proto.Formatter.Generator\bin\$(Configuration)\netstandard2.0\Lagrange.Proto.Formatter.Generator.dll"
+              Pack="true"
+              PackagePath="analyzers/dotnet/cs"
+              Visible="false"/>
+        <None Include="README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+</Project>
